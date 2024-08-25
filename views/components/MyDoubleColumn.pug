@@ -1,0 +1,23 @@
+mixin contentBlock(component)
+  div.content_two_col
+    h2(style=`font-size: ${component.style.titleFontSize}rem; color: ${component.style.titleColor || '#ccc'};`)
+      | #{component.content.title}
+    p(style=`color: ${component.style.paragraphColor || '#000'};`)
+      | #{component.content.paragraph}
+    if component.content.showLink
+      a(href=component.content.link, target='_blank', style=`color: ${component.style.btnTextColor || '#fff'}; background: ${component.style.btnBackgroundColor || '#000'};`)
+        | #{component.content.btnText}
+
+section.two_col(style=`background: ${component.style.backgroundColor || '#fff'};`)
+  if component.content.dislayImgRight
+    div(class="container_two_col row-reverse")
+      +contentBlock(component)
+      div.img_two_col
+        if component.content.img
+          img(src=component.content.img, alt='')
+  else
+    div.container_two_col
+      +contentBlock(component)
+      div.img_two_col
+        if component.content.img
+          img(src=component.content.img, alt='')

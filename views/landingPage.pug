@@ -1,0 +1,23 @@
+doctype html
+html(lang="fr")
+  head
+    title Page Builder
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/css/style.css")
+    script(src="/js/app.js")
+  body
+    each component in components
+            case component.type
+                when 'MyHero'
+                    include components/MyHero.pug
+                when 'MyDoubleColumn'
+                    include components/MyDoubleColumn.pug
+                when 'MyItems'
+                    include components/MyItems.pug
+                when 'MyImgFullWidth'
+                    include components/MyImgFullWidth.pug
+                when 'MyMenuBuilder'
+                    include components/MyMenuBuilder.pug
+                when 'MyText'
+                    include components/MyText.pug

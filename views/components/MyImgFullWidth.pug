@@ -1,0 +1,26 @@
+mixin contentBlock(component)
+  .content_img_full_width
+    h2(style=`font-size: ${component.style.titleFontSize}; color: ${component.style.titleColor};`)
+      | #{component.content.title}
+    p(style=`color: ${component.style.paragraphColor};`)
+      | #{component.content.paragraph}
+    if component.content.showLink
+      a(
+        href=component.content.link
+        target='_blank'
+        style=`color: ${component.style.btnTextColor}; background: ${component.style.btnBackgroundColor};`
+      )
+        | #{component.content.btnText}
+
+section.img_full_width(style=`background-image: url(${component.content.backgroundImg}); background-size: cover; background-position: center;`)
+  .container_img_full_width(
+    class={
+      'flex-start': component.style.selectedContentPosition == 'flex-start',
+      'center': component.style.selectedContentPosition == 'center',
+      'flex-end': component.style.selectedContentPosition == 'flex-end',
+      'light': component.style.selectedOpacity == 'light',
+      'dark': component.style.selectedOpacity == 'dark'
+    }
+  )
+    +contentBlock(component)
+    

@@ -1,0 +1,15 @@
+section.text(style=`background: ${component.style.backgroundColor || '#000'};`)
+    div.container_txt
+      h2(style=`font-size: ${component.style.titleFontSize}rem; color: ${component.style.titleColor || '#ccc'};`)
+        | #{component.content.title}
+      
+      p(style=`color: ${component.style.paragraphColor || '#000'};`)
+        | #{component.content.paragraph}
+      
+      if component.content.showLink
+        a(
+          href=component.content.link
+          target='_blank'
+          style=`color: ${component.style.btnTextColor || '#fff'}; background: ${component.style.btnBackgroundColor || '#000'};`
+        )
+          | #{component.content.btnText}

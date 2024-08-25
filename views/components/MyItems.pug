@@ -1,0 +1,19 @@
+section.items
+  div.container_items
+    div.item(style=`background: ${component.style.backgroundColorCard || '#fff'};`)
+      h3(style=`font-size: ${component.style.titleSize}rem; color: ${component.style.title1Color || '#000'};`)
+        | #{component.content.title1}
+      p(style=`font-size: ${component.style.subTitleSize}rem; color: ${component.style.paragraphColor || '#000'};`)
+        | #{component.content.paragraph1}
+
+    div.item(style=`background: ${component.style.backgroundColorCard || '#fff'};`)
+      h3(style=`font-size: ${component.style.titleSize}rem; color: ${component.style.title2Color || '#000'};`)
+        | #{component.content.title2}
+      p(style=`font-size: ${component.style.subTitleSize}rem; color: ${component.style.paragraphColor || '#000'};`)
+        | #{component.content.paragraph2}
+
+    div.item(style=`background: ${component.style.backgroundColorCard || '#fff'};`)
+      h3(style=`font-size: ${component.style.titleSize}rem; color: ${component.style.title3Color || '#000'};`)
+        | #{component.content.title3}
+      p(style=`font-size: ${component.style.subTitleSize}rem; color: ${component.style.paragraphColor || '#000'};`)
+        | #{component.content.paragraph3}
