@@ -1,0 +1,26 @@
+section.information
+    div.container_information
+        div.content_information
+            
+                h2(style=`font-size: ${component.style.titleFontSize}rem; 
+                color: ${component.style.titleColor || '#ccc'};`)
+                    | #{component.content.title}
+                if component.content.showMail
+                    div.content_info
+                        strong Adresse mail : 
+                        a(style=`color: ${component.style.mailColor || '#ccc'};`)(href=`mailto:${component.content.mail}`) 
+                            | #{component.content.mail}
+                if component.content.showPhone
+                    div.content_info
+                        strong Numéro de téléphone : 
+                        a(style=`color: ${component.style.phoneColor || '#ccc'};`)(href=`tel:${component.content.phone}`) 
+                            | #{component.content.phone}
+                div.content_info
+                    strong Adresse postale :
+                    p(style=`color: ${component.style.locationColor || '#ccc'};`) 
+                        | #{component.content.location}
+                
+              
+  
+        div.container_iframe
+            iframe(src=component.content.iframe, frameborder="0") 

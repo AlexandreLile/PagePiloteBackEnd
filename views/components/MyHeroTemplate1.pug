@@ -1,0 +1,22 @@
+section.hero
+    div.container_hero
+        div.content_hero_template
+            div.position_content_hero
+                h1(style=`font-size: ${component.style.titleFontSize}rem; 
+                color: ${component.style.titleColor || '#ccc'};`)
+                    | #{component.content.title}
+                h2(style=`font-size: ${component.style.subTitleSize}rem; 
+                color: ${component.style.subTitleColor || '#000'};`)
+                    | #{component.content.subTitle}
+                if component.content.showParagraph
+                    p(style=`color: ${component.style.paragraphColor || '#000'};`)
+                        | #{component.content.paragraph}
+                if component.content.showLink
+                    a(href=component.content.link, target='_blank', 
+                        style=`color: ${component.style.btnTextColor || '#fff'}; background: ${component.style.btnBackgroundColor || '#000'};`)
+                        | #{component.content.btnText}
+  
+        div.container_img_hero_template
+            if component.content.img
+                img(src=component.content.img, alt='Hero Image')
+            .circle_img_hero_template(style=`background: ${component.style.circleColor || '#000'};`)

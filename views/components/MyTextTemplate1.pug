@@ -1,0 +1,18 @@
+section.text_template(style=`background: ${component.style.backgroundColor || '#000'};`)
+    div.container_txt_style
+        div.container_txt_template
+        
+          h2(style=`font-size: ${component.style.titleFontSize}rem; color: ${component.style.titleColor || '#ccc'};`)
+            | #{component.content.title}
+          
+          p(style=`color: ${component.style.paragraphColor || '#000'};`)
+            | #{component.content.paragraph}
+          
+          if component.content.showLink
+            a(
+              href=component.content.link
+              target='_blank'
+              style=`color: ${component.style.btnTextColor || '#fff'}; background: ${component.style.btnBackgroundColor || '#000'};`
+            )
+              | #{component.content.btnText}
+        div.style-text(style=`background-color: ${component.style.waveColor || '#000'};`)

@@ -8,7 +8,7 @@ mixin contentBlock(component)
       a(href=component.content.link, target='_blank', style=`color: ${component.style.btnTextColor || '#fff'}; background: ${component.style.btnBackgroundColor || '#000'};`)
         | #{component.content.btnText}
 
-section.two_col(style=`background: ${component.style.backgroundColor || '#fff'};`)
+section.two_col(style=`background: ${component.style.backgroundColor || '#fff'};  padding-top: ${component.style.paddingTop}px; padding-bottom: ${component.style.paddingBottom}px;`)
   if component.content.dislayImgRight
     div(class="container_two_col row-reverse")
       +contentBlock(component)
